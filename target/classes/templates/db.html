@@ -5,10 +5,32 @@
 
 
 <div class="container">
-  <h1>Database Output</h1>
-  <ul th:each="record : ${records}">
-    <li th:text="${record}"/>
-  </ul>
+  <h1>Search Results</h1>
+<!--   <ul th:each="record : ${records}"> -->
+<!--     <li th:text="${record}"/> -->
+<!--   </ul> -->
+<div>
+  <table class="table table-striped">
+  <thead>
+  <tr>
+  	<td>Company Name</td>
+  	<td>Brand Name</td>
+  	<td>Amount Net</td>
+  	<td>Amount Tax</td>
+  	<td>Islamic</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="quote : ${quotes}">
+    <td th:text="${quote.companyName}" />
+    <td th:text="${quote.brandName}" />
+    <td th:text="${quote.amountNet}" />
+    <td th:text="${quote.amountTax}" />
+    <td th:text="${quote.islamic}" />
+  </tr>
+  </tbody>
+</table>
+</div>
 </div>
 
 </body>
