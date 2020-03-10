@@ -17,6 +17,7 @@ Follwoing tools & frameworks are used
 - log4j
 - lombok
 - heroku
+- git
 
 # Db-Tables
 The app has following tables
