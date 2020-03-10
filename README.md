@@ -11,9 +11,11 @@ Follwoing tools & frameworks are used
 - jpa
 - junit
 - jquery
+- bootstrap
 - postgressql
 - h2
 - log4j
+- lombok
 - heroku
 
 # Db-Tables
