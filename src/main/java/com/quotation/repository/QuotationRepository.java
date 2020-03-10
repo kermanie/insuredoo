@@ -34,7 +34,7 @@ public class QuotationRepository {
     public List<Qutotaion> getBestQutation(String brandName, String model){
         String sql = "select company_name, is_islamic, brand_name, amount_net, amount_tax, valid_from as model_from, valid_to as model_to "
                 + "from (select takaful_id, name as company_name, is_islamic, p.product_id, "
-                + "amount_net, amount_tax, valid_from, valid_to,bp.brand_id, (select brand_name from brand b where b.brand_id = bp.brand_id) "
+                + "amount_net, amount_tax, valid_from, valid_to,bp.brand_id, (select brand_name from brand b where b.brand_id = bp.brand_id) as brand_name "
                 + "from takaful t, product p, product_brand bp where p.company_id = t.takaful_id and bp.product_id =  p.product_id) view_takaful "
                 + "where brand_name = '"+brandName+"' and "+model+" between valid_from AND valid_to order by amount_net asc";
         Query query = entityManager.createNativeQuery(sql);
