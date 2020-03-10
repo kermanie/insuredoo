@@ -56,13 +56,13 @@ public class QuotationRepository {
              quotation.setAmountTax((Integer) line[4]);
              quotation.setModelFrom((Integer) line[5]);
              quotation.setModelFrom((Integer) line[6]);
-             boolean found = false;
+             boolean isAdded = false;
              for (Qutotaion q: list){
-                 if(q.isIslamic() == quotation.isIslamic()){
-                     found = true;
+                 if(Boolean.compare(q.isIslamic(), quotation.isIslamic()) != 0 && q.getAmountNet().equals(quotation.getAmountNet())){
+                     isAdded = true;
                  }
              }
-             if(!found)
+             if(isAdded || list.size() == 0)
                  list.add(quotation);
         }
         
